@@ -1,10 +1,11 @@
-FROM ubuntu:precise
-MAINTAINER bobtfish@bobtfish.net
+FROM ubuntu
+MAINTAINER theclaymethod
 
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update -qq -y && \
     apt-get install -qq -y ruby1.9.3 ruby-bundler build-essential git-core iputils-ping && \
+    apt-get install --assume-yes augeas-tools && \
     apt-get clean
 
 RUN git clone https://github.com/bobtfish/nerve.git;cd nerve;gem build *.gemspec;gem install *.gem;cd .. ; rm -r nerve
