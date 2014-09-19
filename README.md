@@ -10,5 +10,5 @@ Example of how you would use this container, first you start the application:
 
 and then
 
-    docker run -d -e NERVE_SERVICE=testservice --link etcd:etcd --link testservice1:testservice1 --name testservice-registration bobtfish/nerve-etcd
+    docker run -d -e NERVE_SERVICE=testservice --link zookeeper:zk --link testservice1:testservice1 --name testservice-registration bobtfish/nerve-etcd
 
